@@ -7,13 +7,38 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShoppingCartTest {
     @Test
     void calculatePriceForMagicCards_red() {
+        //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
 
         Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        //act
+        shoppingCart.addProduct(product);
+        //assert
+        assertEquals(shoppingCart.getTotalPrice(), 3.5);
+
+    }
+
+    @Test
+    void calculatePriceForMagicCards_black() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(shoppingCart.getTotalPrice(), 3.5);
+        assertEquals(shoppingCart.getTotalPrice(), 6.8);
+
+    }
+
+    @Test
+    void calculatePriceForMagicCards_green() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Dauntless Dourbark", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 4.4);
 
     }
 
