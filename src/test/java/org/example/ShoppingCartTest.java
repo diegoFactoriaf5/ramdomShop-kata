@@ -17,7 +17,17 @@ class ShoppingCartTest {
         assertEquals(shoppingCart.getTotalPrice(), 3.5);
 
     }
+    @Test
+    void calculatePriceForMagicCards_blackLotus() {
+        //arrange
+        ShoppingCart shoppingCart = new ShoppingCart();
+        Product product = new Product(null, null, false, null, null, "Magic: The Gathering - Black Lotus", null);
+        //act
+        shoppingCart.addProduct(product);
+        //assert
+        assertEquals(shoppingCart.getTotalPrice(), 40000.0);
 
+    }
     @Test
     void calculatePriceForMagicCards_black() {
         ShoppingCart shoppingCart = new ShoppingCart();
@@ -51,6 +61,17 @@ class ShoppingCartTest {
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(), 5.0);
+
+    }
+    @Test
+    void calculatePriceForMagicCards_brown() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Swamp", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 2.0);
 
     }
 
