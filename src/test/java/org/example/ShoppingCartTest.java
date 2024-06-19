@@ -98,4 +98,16 @@ class ShoppingCartTest {
         assertEquals(shoppingCart.getTotalPrice(), 50.0);
 
     }
+
+    @Test
+    void calculatePriceForFourLeggedPet() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(4, null, false, null, null, null, null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 16.8);
+
+    }
 }
