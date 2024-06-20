@@ -177,7 +177,7 @@ class ShoppingCartTest {
     void calculatePriceForTwentyYearsMagicCards_black() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null, false, true);
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator 2.0", null, false, true);
 
         shoppingCart.addProduct(product);
 
@@ -189,7 +189,7 @@ class ShoppingCartTest {
     void calculatePriceForTwentyYearsMagicCards_green() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Phyrexian Obliterator", null, false, false);
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Phyrexian Obliterator", null, false, true);
 
         shoppingCart.addProduct(product);
 
