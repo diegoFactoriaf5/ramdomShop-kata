@@ -10,9 +10,10 @@ public class Product {
     private final BigDecimal basePrice;
     private final String name;
     private final BigDecimal sellPrice;
-    private int cardYears;
+    private final boolean tenCardYears;
+    private final boolean twentyCardYears;
 
-    public Product(Integer numberOfLegs, Integer age, boolean isStinky, String color, BigDecimal basePrice, String name, BigDecimal sellPrice, int cardYears) {
+    public Product(Integer numberOfLegs, Integer age, boolean isStinky, String color, BigDecimal basePrice, String name, BigDecimal sellPrice, boolean tenCardYears, boolean twentyCardYears) {
         this.numberOfLegs = numberOfLegs;
         this.age = age;
         this.isStinky = isStinky;
@@ -20,7 +21,8 @@ public class Product {
         this.basePrice = basePrice;
         this.name = name;
         this.sellPrice = sellPrice;
-        this.cardYears = cardYears;
+        this.tenCardYears = tenCardYears;
+        this.twentyCardYears = twentyCardYears;
     }
 
 
@@ -50,6 +52,14 @@ public class Product {
 
     public BigDecimal getSellPrice() {
         return sellPrice;
+    }
+
+    public boolean tenCardYears() {
+        return tenCardYears;
+    }
+
+    public boolean twentyCardYears() {
+        return twentyCardYears;
     }
 
 }
