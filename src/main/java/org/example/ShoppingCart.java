@@ -43,10 +43,30 @@ public class ShoppingCart {
                 case "green" -> BigDecimal.valueOf(4.40);
                 case "black" -> BigDecimal.valueOf(6.80);
                 default -> BigDecimal.valueOf(2.0);
-            };
-        } else {
+                    };
+        } else if (product.getNumberOfSpiderLegs() != null) {
+            return BigDecimal.valueOf(1.2).multiply(BigDecimal.valueOf(product.getNumberOfSpiderLegs()));
+        } /*else if (product.getColorSpider() != null) {
+            return switch (product.getColorSpider()) {
+                case "red" -> {
+                    if (product.isSpiderStinky()) {
+                        yield BigDecimal.valueOf(1.2 * product.getNumberOfSpiderLegs() + 2.0).divide(BigDecimal.valueOf(2));
+                    } else {
+                        yield BigDecimal.valueOf(1.2 * product.getNumberOfSpiderLegs() + 2.0);
+                    }
+                }
+                case "gold" -> {
+                    if (product.isSpiderStinky()) {
+                        yield BigDecimal.valueOf(1.2 * product.getNumberOfSpiderLegs() + 3.0).divide(BigDecimal.valueOf(2));
+                    } else {
+                        yield BigDecimal.valueOf(1.2 * product.getNumberOfSpiderLegs() + 3.0);
+                    }
+                }
+                default-> BigDecimal.valueOf(1.2 * product.getNumberOfSpiderLegs());
+            };*/
+        //}
+        else {
             return product.getSellPrice();
         }
-    }
-
+     }
 }

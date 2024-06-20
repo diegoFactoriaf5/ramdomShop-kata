@@ -9,7 +9,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_red() {
         //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null,0, false, null );
         //act
         shoppingCart.addProduct(product);
         //assert
@@ -20,7 +20,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_blackLotus() {
         //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
-        Product product = new Product(null, null, false, null, null, "Magic: The Gathering - Black Lotus", null);
+        Product product = new Product(null, null, false, null, null, "Magic: The Gathering - Black Lotus", null,0, false, null);
         //act
         shoppingCart.addProduct(product);
         //assert
@@ -30,7 +30,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_black() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null);
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null,0,false,null);
 
         shoppingCart.addProduct(product);
 
@@ -42,7 +42,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_green() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Dauntless Dourbark", null);
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Dauntless Dourbark", null,0, false, null);
 
         shoppingCart.addProduct(product);
 
@@ -54,7 +54,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_blue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Maga Eternal", null);
+        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Maga Eternal", null,0,false,null);
 
         shoppingCart.addProduct(product);
 
@@ -65,7 +65,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_brown() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Swamp", null);
+        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Swamp", null, 0, false, null);
 
         shoppingCart.addProduct(product);
 
@@ -77,7 +77,7 @@ class ShoppingCartTest {
     void calculatePriceForWine() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, null, null, "el tio juanillo", null);
+        Product product = new Product(null, 5, false, null, null, "el tio juanillo", null,0,false, null);
 
         shoppingCart.addProduct(product);
 
@@ -89,7 +89,7 @@ class ShoppingCartTest {
     void calculatePriceForCheese() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, true, null, null, "French Camembert", null);
+        Product product = new Product(null, 5, true, null, null, "French Camembert", null,0,false,null);
 
         shoppingCart.addProduct(product);
 
@@ -101,7 +101,7 @@ class ShoppingCartTest {
     void calculatePriceFishBlue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "blue", null, null, null);
+        Product product = new Product(null, null, true, "blue", null, null, null,0,false,null);
 
         shoppingCart.addProduct(product);
 
@@ -112,7 +112,7 @@ class ShoppingCartTest {
     void calculatePriceFishGold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "gold", null, null, null);
+        Product product = new Product(null, null, true, "gold", null, null, null,0,false,null);
 
         shoppingCart.addProduct(product);
 
@@ -123,11 +123,34 @@ class ShoppingCartTest {
     void calculatePriceFish() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, null, null, null, null);
+        Product product = new Product(null, null, true, null, null, null, null,0,false,null);
 
         shoppingCart.addProduct(product);
 
         assertEquals(product.getBasePrice(), null);
+
+    }
+
+    @Test
+    void calculatePriceForFourLeggedPet() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(4, null, false, null, null, null, null,0,false,null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 16.8);
+
+    }
+    @Test
+    void calculatePriceForSpiderOf8Legs() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(0, null, false, null, null, null, null, 8, false, null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(),9.60);
 
     }
 }
