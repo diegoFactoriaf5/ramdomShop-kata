@@ -56,14 +56,57 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_default() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "other", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Lightning Bolt", null);
 
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(), 2.0);
 
     }
+    @Test
+    void calculatePriceForMagicCards_blue_10_years() {
+        ShoppingCart shoppingCart = new ShoppingCart();
 
+        Product product = new Product(null, 10, false, "blue", null, "Magic: The Gathering - Maga Eternal", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 2.5);;
+
+    }
+    @Test
+    void calculatePriceForMagicCards_red_10_years() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, 10, false, "red", null, "Magic: The Gathering - Maga Eternal", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 1.75);;
+
+    }
+    @Test
+    void calculatePriceForMagicCards_green_20_years() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, 20, false, "green", null, "Magic: The Gathering - Maga Eternal", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 5.28);;
+
+    }
+    @Test
+    void calculatePriceForMagicCards_black_20_years() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, 20, false, "black", null, "Magic: The Gathering - Maga Eternal", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 8.16);;
+
+    }
 
     @Test
     void calculatePriceForWine() {
@@ -92,25 +135,25 @@ class ShoppingCartTest {
     void calculatePriceForFish_blue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        BigDecimal bigDecimal = new BigDecimal("0.10");
+        BigDecimal bigDecimal = new BigDecimal("1.0");
 
         Product product = new Product(null, null, false, "blue", bigDecimal, null, null);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(shoppingCart.getTotalPrice(), 0.20);
+        assertEquals(shoppingCart.getTotalPrice(), 1.10);
 }
     @Test
     void calculatePriceForFish_gold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        BigDecimal bigDecimal = new BigDecimal("100.0");
+        BigDecimal bigDecimal = new BigDecimal("1.0");
 
         Product product = new Product(null, null, false, "gold", bigDecimal, null, null);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(shoppingCart.getTotalPrice(), 10000.0);
+        assertEquals(shoppingCart.getTotalPrice(), 100.0);
     }
     @Test
     void calculatePriceForFish_default() {
@@ -157,6 +200,65 @@ class ShoppingCartTest {
 
         assertEquals(shoppingCart.getTotalPrice(), 1.0);
     }
+    @Test
+    void calculatePriceFor_spider_gold_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
 
+        Product product = new Product(8, null, true,"gold", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 6.3);
+    }
+    @Test
+    void calculatePriceFor_spider_red_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, true,"red", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 5.8);
+    }
+    @Test
+    void calculatePriceFor_spider_default_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, true,"blue", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 4.8);
+    }
+    @Test
+    void calculatePriceFor_spider_gold_is_not_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, false,"gold", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 12.6);
+    }
+    @Test
+    void calculatePriceFor_spider_red_is_not_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, false,"red", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 11.6);
+    }
+    @Test
+    void calculatePriceFor_spider_default_is_not_Stinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, false,"blue", null,"Spiders",null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 9.6);
+    }
 
 }
