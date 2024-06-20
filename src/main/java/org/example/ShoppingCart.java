@@ -38,10 +38,38 @@ public class ShoppingCart {
             return BigDecimal.valueOf(40000.0);
         } else if (product.getName().startsWith("Magic: The Gathering")) {
             return switch (product.getColor()) {
-                case "blue" -> BigDecimal.valueOf(5.0);
-                case "red" -> BigDecimal.valueOf(3.5);
-                case "green" -> BigDecimal.valueOf(4.40);
-                case "black" -> BigDecimal.valueOf(6.80);
+                case "blue" -> {
+                    boolean tenCardYears = product.tenCardYears();
+                    if (!tenCardYears) {
+                        yield BigDecimal.valueOf(5.0);
+                    } else {
+                        yield BigDecimal.valueOf(5.0).divide(BigDecimal.valueOf(2));
+                    }
+                }
+                case "red" -> {
+                    boolean tenCardYears = product.tenCardYears();
+                    if (!tenCardYears) {
+                        yield BigDecimal.valueOf(3.5);
+                    } else {
+                        yield BigDecimal.valueOf(3.5).divide(BigDecimal.valueOf(2));
+                    }
+                }
+                case "green" -> {
+                    boolean twentyCardYears = product.twentyCardYears();
+                    if (!twentyCardYears) {
+                        yield BigDecimal.valueOf(4.4);
+                    } else {
+                        yield BigDecimal.valueOf(4.4).multiply(BigDecimal.valueOf(1.2));
+                    }
+                }
+                case "black" -> {
+                    boolean twentyCardYears = product.twentyCardYears();
+                    if (!twentyCardYears) {
+                        yield BigDecimal.valueOf(6.8);
+                    } else {
+                        yield BigDecimal.valueOf(6.8).multiply(BigDecimal.valueOf(1.2));
+                    }
+                }
                 default -> BigDecimal.valueOf(2.0);
             };
         } else {
