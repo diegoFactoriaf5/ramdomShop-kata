@@ -43,73 +43,16 @@ This class represents a product with the following attributes:
 
 ## Tests
 
-Below is the description of each test in the `ShoppingCartTest` class:
+The `ShoppingCartTest` class verifies the functionality of the shopping cart. Here is a brief overview of the key tests:
 
-### 1. **calculatePriceForMagicCards_red()**
-   - Verifies the price calculation for a red "Magic: The Gathering" card named "Magic: The Gathering - Lightning Bolt". Expected price: 3.5.
+1. **Magic: The Gathering Cards**: Tests various scenarios for calculating prices of cards based on color, age, and type.
+2. **Wine and Cheese**: Validates price calculations for gourmet products, including the effect of age and stinky status.
+3. **Fish**: Ensures correct pricing for fish based on color.
+4. **Black Lotus Card**: Confirms the high price for the rare "Magic: The Gathering - Black Lotus" card.
+5. **Terrestrial Animals**: Checks the price for animals with legs.
+6. **Chocolate**: Verifies the price calculation for chocolate.
+7. **Spiders**: Tests the pricing for spiders, considering their color, leg count, and stinky status.
 
-### 2. **calculatePriceForMagicCards_blue()**
-   - Checks the price calculation for a blue "Magic: The Gathering" card named "Magic: The Gathering - Maga Eternal". Expected price: 5.0.
+## Conclusion
 
-### 3. **calculatePriceForMagicCards_green()**
-   - Ensures the price calculation for a green "Magic: The Gathering" card named "Magic: The Gathering - Lightning Bolt". Expected price: 4.4.
-
-### 4. **calculatePriceForMagicCards_black()**
-   - Validates the price calculation for a black "Magic: The Gathering" card named "Magic: The Gathering - Lightning Bolt". Expected price: 6.8.
-
-### 5. **calculatePriceForMagicCards_default()**
-   - Confirms the price calculation for a "Magic: The Gathering" card with a default color (brown) named "Magic: The Gathering - Lightning Bolt". Expected price: 2.0.
-
-### 6. **calculatePriceForMagicCards_blue_10_years()**
-   - Checks the price calculation for a blue "Magic: The Gathering" card named "Magic: The Gathering - Maga Eternal" that is 10 years old. Expected price: 2.5.
-
-### 7. **calculatePriceForMagicCards_red_10_years()**
-   - Ensures the price calculation for a red "Magic: The Gathering" card named "Magic: The Gathering - Maga Eternal" that is 10 years old. Expected price: 1.75.
-
-### 8. **calculatePriceForMagicCards_green_20_years()**
-   - Validates the price calculation for a green "Magic: The Gathering" card named "Magic: The Gathering - Maga Eternal" that is 20 years old. Expected price: 5.28.
-
-### 9. **calculatePriceForMagicCards_black_20_years()**
-   - Verifies the price calculation for a black "Magic: The Gathering" card named "Magic: The Gathering - Maga Eternal" that is 20 years old. Expected price: 8.16.
-
-### 10. **calculatePriceForWine()**
-   - Checks the price calculation for a wine product named "el tio juanillo" that is 10 years old. Expected price: 200.0.
-
-### 11. **calculatePriceForCheese()**
-   - Ensures the price calculation for a cheese product named "French Camembert" that is 5 years old and has a stinky status. Expected price: 50.0.
-
-### 12. **calculatePriceForFish_blue()**
-   - Validates the price calculation for a blue fish with a base price of 1.0. Expected price: 1.10.
-
-### 13. **calculatePriceForFish_gold()**
-   - Verifies the price calculation for a gold fish with a base price of 1.0. Expected price: 100.0.
-
-### 14. **calculatePriceForFish_default()**
-   - Checks the price calculation for a fish with a default color (other) with a base price of 0.0. Expected price: 0.0.
-
-### 15. **calculatePriceFor_Black_Lotus()**
-   - Ensures the price calculation for a card named "Magic: The Gathering - Black Lotus". Expected price: 40000.0.
-
-### 16. **calculatePriceFor_animals_terrestrial()**
-   - Validates the price calculation for a terrestrial animal with 4 legs. Expected price: 16.8.
-
-### 17. **calculatePriceFor_chocolate()**
-   - Verifies the price calculation for a chocolate product with a base price of 1.0 and color black. Expected price: 1.0.
-
-### 18. **calculatePriceFor_spider_gold_Stinky()**
-   - Checks the price calculation for a gold spider with 8 legs and a stinky status. Expected price: 6.3.
-
-### 19. **calculatePriceFor_spider_red_Stinky()**
-   - Ensures the price calculation for a red spider with 8 legs and a stinky status. Expected price: 5.8.
-
-### 20. **calculatePriceFor_spider_default_Stinky()**
-   - Validates the price calculation for a spider with a default color (blue) with 8 legs and a stinky status. Expected price: 4.8.
-
-### 21. **calculatePriceFor_spider_gold_is_not_Stinky()**
-   - Verifies the price calculation for a gold spider with 8 legs and not stinky. Expected price: 12.6.
-
-### 22. **calculatePriceFor_spider_red_is_not_Stinky()**
-   - Checks the price calculation for a red spider with 8 legs and not stinky. Expected price: 11.6.
-
-### 23. **calculatePriceFor_spider_default_is_not_Stinky()**
-   - Ensures the price calculation for a spider with a default color (blue) with 8 legs and not stinky. Expected price: 9.6.
+This project demonstrates a robust approach to managing a shopping cart with diverse product types, each having unique pricing criteria. The comprehensive tests ensure that all edge cases and scenarios are covered, guaranteeing accurate price calculations for any product added to the cart.
