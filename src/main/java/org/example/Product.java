@@ -19,6 +19,7 @@ public class Product {
         this.basePrice = basePrice;
         this.name = name;
         this.sellPrice = sellPrice;
+
     }
 
     public Integer getNumberOfLegs() {
@@ -34,10 +35,12 @@ public class Product {
     }
 
     public String getColor() {
+
         return color;
     }
 
     public BigDecimal getBasePrice() {
+
         return basePrice;
     }
 

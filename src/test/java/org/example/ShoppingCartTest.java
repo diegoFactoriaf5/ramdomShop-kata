@@ -2,6 +2,8 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
@@ -9,7 +11,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_red() {
         //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null);
+        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null );
         //act
         shoppingCart.addProduct(product);
         //assert
@@ -96,27 +98,26 @@ class ShoppingCartTest {
         assertEquals(shoppingCart.getTotalPrice(), 50.0);
 
     }
-    //TODO cambiar de null al precio en la función
     @Test
     void calculatePriceFishBlue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "blue", null, null, null);
+        Product product = new Product(null, null, true, "blue", BigDecimal.valueOf(0), null, null);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), null);
+        assertEquals(shoppingCart.getTotalPrice(), 0.10);
 
     }
     @Test
     void calculatePriceFishGold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "gold", null, null, null);
+        Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), null);
+        assertEquals(shoppingCart.getTotalPrice(), 100.0);
 
     }
     @Test
@@ -141,5 +142,55 @@ class ShoppingCartTest {
 
         assertEquals(shoppingCart.getTotalPrice(), 16.8);
 
+    }
+ @Test
+void calculatePriceForSpiderOf8Legs() {
+    ShoppingCart shoppingCart = new ShoppingCart();
+
+    Product product = new Product(8, null, false, null, null, "Spider", null);
+
+    shoppingCart.addProduct(product);
+
+    assertEquals(shoppingCart.getTotalPrice(), 9.6);
+}
+    @Test
+    void calculatePriceForSpiderOf8LegsRed() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, false, "Red", null, "Spider", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 11.6);
+    }
+    @Test
+    void calculatePriceForSpiderOf8LegsGold() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, false, "Gold", null, "Spider", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 12.6);
+    }
+    @Test
+    void calculatePriceForSpiderOf8LegsRedStinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, true, "Red", null, "Spider", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 5.8);
+    }
+    @Test
+    void calculatePriceForSpiderOf8LegsGoldStinky() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(8, null, true, "Gold", null, "Spider", null);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 6.3);
     }
 }
