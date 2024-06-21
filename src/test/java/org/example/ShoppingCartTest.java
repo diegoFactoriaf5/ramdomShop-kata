@@ -22,7 +22,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_blackLotus() {
         //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
-        Product product = new Product(null, null, false, null, null, "Magic: The Gathering - Black Lotus", null);
+        Product product = new Product(null, null, false, null, null, "Magic: The Gathering - Black Lotus", null, false, false);
         //act
         shoppingCart.addProduct(product);
         //assert
@@ -98,6 +98,7 @@ class ShoppingCartTest {
         assertEquals(shoppingCart.getTotalPrice(), 50.0);
 
     }
+    //TODO cambiar de null al precio en la función
     @Test
     void calculatePriceFishBlue() {
         ShoppingCart shoppingCart = new ShoppingCart();
@@ -113,11 +114,11 @@ class ShoppingCartTest {
     void calculatePriceFishGold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null);
+        Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null, false, false);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(shoppingCart.getTotalPrice(), 100.0);
+        assertEquals(shoppingCart.getTotalPrice(), 100);
 
     }
     @Test
@@ -141,6 +142,53 @@ class ShoppingCartTest {
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(), 16.8);
+
+    }
+
+    @Test
+    void calculatePriceForTenYearsMagicCards_blue() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Water Weird", null, true, false);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 2.5);
+
+    }
+
+    @Test
+    void calculatePriceForTenYearsMagicCards_red() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Water Weird", null, true, false);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 1.75);
+    }
+
+    @Test
+    void calculatePriceForTwentyYearsMagicCards_black() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator 2.0", null, false, true);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 8.16);
+
+    }
+
+    @Test
+    void calculatePriceForTwentyYearsMagicCards_green() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Phyrexian Obliterator", null, false, true);
+
+        shoppingCart.addProduct(product);
+
+        assertEquals(shoppingCart.getTotalPrice(), 5.28);
 
     }
  @Test
