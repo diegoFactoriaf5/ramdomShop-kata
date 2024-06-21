@@ -11,7 +11,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_red() {
         //arrange
         ShoppingCart shoppingCart = new ShoppingCart();
-        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null );
+        Product product = new Product(null, null, false, "red", null, "Magic: The Gathering - Lightning Bolt", null,false, false);
         //act
         shoppingCart.addProduct(product);
         //assert
@@ -32,7 +32,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_black() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null);
+        Product product = new Product(null, null, false, "black", null, "Magic: The Gathering - Phyrexian Obliterator", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -44,7 +44,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_green() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Dauntless Dourbark", null);
+        Product product = new Product(null, null, false, "green", null, "Magic: The Gathering - Dauntless Dourbark", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -56,7 +56,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_blue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Maga Eternal", null);
+        Product product = new Product(null, null, false, "blue", null, "Magic: The Gathering - Maga Eternal", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -67,7 +67,7 @@ class ShoppingCartTest {
     void calculatePriceForMagicCards_brown() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Swamp", null);
+        Product product = new Product(null, null, false, "brown", null, "Magic: The Gathering - Swamp", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -79,7 +79,7 @@ class ShoppingCartTest {
     void calculatePriceForWine() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, false, null, null, "el tio juanillo", null);
+        Product product = new Product(null, 5, false, null, null, "el tio juanillo", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -91,19 +91,18 @@ class ShoppingCartTest {
     void calculatePriceForCheese() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, 5, true, null, null, "French Camembert", null);
+        Product product = new Product(null, 5, true, null, null, "French Camembert", null,false, false);
 
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(), 50.0);
 
     }
-    //TODO cambiar de null al precio en la función
     @Test
     void calculatePriceFishBlue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "blue", BigDecimal.valueOf(0), null, null);
+        Product product = new Product(null, null, true, "blue", BigDecimal.valueOf(0), null, null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -125,7 +124,7 @@ class ShoppingCartTest {
     void calculatePriceFish() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, null, null, null, null);
+        Product product = new Product(null, null, true, null, null, null, null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -137,7 +136,7 @@ class ShoppingCartTest {
     void calculatePriceForFourLeggedPet() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(4, null, false, null, null, null, null);
+        Product product = new Product(4, null, false, null, null, null, null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -195,7 +194,7 @@ class ShoppingCartTest {
 void calculatePriceForSpiderOf8Legs() {
     ShoppingCart shoppingCart = new ShoppingCart();
 
-    Product product = new Product(8, null, false, null, null, "Spider", null);
+    Product product = new Product(8, null, false, null, null, "Spider", null,false, false);
 
     shoppingCart.addProduct(product);
 
@@ -205,7 +204,7 @@ void calculatePriceForSpiderOf8Legs() {
     void calculatePriceForSpiderOf8LegsRed() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(8, null, false, "Red", null, "Spider", null);
+        Product product = new Product(8, null, false, "Red", null, "Spider", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -215,7 +214,7 @@ void calculatePriceForSpiderOf8Legs() {
     void calculatePriceForSpiderOf8LegsGold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(8, null, false, "Gold", null, "Spider", null);
+        Product product = new Product(8, null, false, "Gold", null, "Spider", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -225,7 +224,7 @@ void calculatePriceForSpiderOf8Legs() {
     void calculatePriceForSpiderOf8LegsRedStinky() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(8, null, true, "Red", null, "Spider", null);
+        Product product = new Product(8, null, true, "Red", null, "Spider", null,false, false);
 
         shoppingCart.addProduct(product);
 
@@ -235,7 +234,7 @@ void calculatePriceForSpiderOf8Legs() {
     void calculatePriceForSpiderOf8LegsGoldStinky() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(8, null, true, "Gold", null, "Spider", null);
+        Product product = new Product(8, null, true, "Gold", null, "Spider", null,false, false);
 
         shoppingCart.addProduct(product);
 
