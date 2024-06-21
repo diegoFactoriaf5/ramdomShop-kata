@@ -2,6 +2,8 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ShoppingCartTest {
@@ -106,11 +108,11 @@ class ShoppingCartTest {
     void calculatePriceFishBlue() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "blue", null, null, null, false, false);
+        Product product = new Product(null, null, true, "blue", BigDecimal.valueOf(0), null, null, false, false);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), null);
+        assertEquals(shoppingCart.getTotalPrice(), 0.10);
 
     }
 
@@ -118,11 +120,11 @@ class ShoppingCartTest {
     void calculatePriceFishGold() {
         ShoppingCart shoppingCart = new ShoppingCart();
 
-        Product product = new Product(null, null, true, "gold", null, null, null, false, false);
+        Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null, false, false);
 
         shoppingCart.addProduct(product);
 
-        assertEquals(product.getBasePrice(), null);
+        assertEquals(shoppingCart.getTotalPrice(), 100);
 
     }
 
