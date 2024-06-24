@@ -128,7 +128,7 @@ class ShoppingCartTest {
 
         shoppingCart.addProduct(product);
 
-        gitassertEquals(product.getBasePrice(), null);
+        assertEquals(product.getBasePrice(), null);
 
     }
 
