@@ -100,13 +100,8 @@ class ShoppingCartTest {
     }
     @Test
     void calculatePriceFishBlue() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(null, null, true, "blue", BigDecimal.valueOf(0), null, null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 0.10);
+       AquaticAnimal aquaticAnimal = new AquaticAnimal("blue", 0);
+        assertEquals(aquaticAnimal.calculatePrice(), 0.10);
 
     }
     @Test
@@ -117,13 +112,8 @@ class ShoppingCartTest {
     }
     @Test
     void calculatePriceFish() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(null, null, true, null, null, null, null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(product.getBasePrice(), null);
+        AquaticAnimal aquaticAnimal = new AquaticAnimal( "", 0);
+        assertEquals(aquaticAnimal.calculatePrice(), 0);
 
     }
 

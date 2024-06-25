@@ -1,7 +1,5 @@
 package org.example;
 
-import java.math.BigDecimal;
-
 public class AquaticAnimal {
 
     private String color;
@@ -25,7 +23,7 @@ public class AquaticAnimal {
     public double calculatePrice() {
         return switch (this.getColor()) {
             case "blue" -> this.getBasePrice()  +0.1;
-            case "gold" -> this.getBasePrice()* 100.0;
+            case "gold" -> this.getBasePrice() *100.0;
             default -> this.getBasePrice();
         };
     }
