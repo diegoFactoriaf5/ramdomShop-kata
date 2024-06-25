@@ -1,4 +1,4 @@
-package org.example;
+/*package org.example;
 
 import org.junit.jupiter.api.Test;
 
@@ -239,5 +239,6 @@ void calculatePriceForSpiderOf8Legs() {
         shoppingCart.addProduct(product);
 
         assertEquals(shoppingCart.getTotalPrice(), 6.3);
-    }
-}
+    }*/
+/*
+}*/

@@ -13,52 +13,27 @@ public class TerrestrialAnimalTest {
 
     @Test
     void calculatePriceForSpiderOf8Legs() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(8, null, false, null, null, "Spider", null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 9.6);
+        TerrestrialAnimal terrestrialAnimal = new TerrestrialAnimal(8,null,false,"Spider");
+        assertEquals(terrestrialAnimal.calculatePrice(), 9.6);
     }
     @Test
     void calculatePriceForSpiderOf8LegsRed() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(8, null, false, "Red", null, "Spider", null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 11.6);
+       TerrestrialAnimal terrestrialAnimal = new TerrestrialAnimal(8,"Red", false,"Spider");
+        assertEquals(terrestrialAnimal.calculatePrice(), 11.6);
     }
     @Test
     void calculatePriceForSpiderOf8LegsGold() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(8, null, false, "Gold", null, "Spider", null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 12.6);
+        TerrestrialAnimal terrestrialAnimal = new TerrestrialAnimal(8,"Gold", false,"Spider");
+        assertEquals(terrestrialAnimal.calculatePrice(), 12.6);
     }
     @Test
     void calculatePriceForSpiderOf8LegsRedStinky() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(8, null, true, "Red", null, "Spider", null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 5.8);
+        TerrestrialAnimal terrestrialAnimal = new TerrestrialAnimal(8,"Red", true,"Spider");
+        assertEquals(terrestrialAnimal.calculatePrice(), 5.8);
     }
     @Test
     void calculatePriceForSpiderOf8LegsGoldStinky() {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        Product product = new Product(8, null, true, "Gold", null, "Spider", null,false, false);
-
-        shoppingCart.addProduct(product);
-
-        assertEquals(shoppingCart.getTotalPrice(), 6.3);
+        TerrestrialAnimal terrestrialAnimal = new TerrestrialAnimal(8,"Gold", true,"Spider");
+        assertEquals(terrestrialAnimal.calculatePrice(), 6.3);
     }
 }
