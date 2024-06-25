@@ -5,28 +5,28 @@ import java.math.BigDecimal;
 public class AquaticAnimal {
 
     private String color;
-    private BigDecimal totalPrice = null;
 
-    public AquaticAnimal() {
+    public AquaticAnimal(String color, double basePrice) {
         this.color = color;
+        this.basePrice = basePrice;
     }
+
+    private double basePrice;
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
 
     public String getColor() {
         return color;
     }
 
-    public BigDecimal fishPrice(Product product) {
-        return switch (product.getColor()) {
-            case "blue" -> product.getBasePrice().add(BigDecimal.valueOf(0.1));
-            case "gold" -> product.getBasePrice().multiply(BigDecimal.valueOf(100.0));
-            default -> product.getBasePrice();
+    public double calculatePrice() {
+        return switch (this.getColor()) {
+            case "blue" -> this.getBasePrice()  +0.1;
+            case "gold" -> this.getBasePrice()* 100.0;
+            default -> this.getBasePrice();
         };
-    }
-
-    public void addProduct(Product product) {
-    }
-
-    public short getTotalPrice() {
-        return 100;
     }
 }

@@ -111,13 +111,8 @@ class ShoppingCartTest {
     }
     @Test
     void calculatePriceFishGold() {
-        AquaticAnimal aquaticAnimal = new AquaticAnimal();
-
-        Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null, false, false);
-
-        aquaticAnimal.addProduct(product);
-
-        assertEquals(aquaticAnimal.getTotalPrice(), 100);
+        AquaticAnimal aquaticAnimal = new AquaticAnimal("gold", 1);
+        assertEquals(aquaticAnimal.calculatePrice(), 100);
 
     }
     @Test
