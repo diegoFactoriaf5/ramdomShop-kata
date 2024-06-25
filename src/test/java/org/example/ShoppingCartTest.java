@@ -111,13 +111,13 @@ class ShoppingCartTest {
     }
     @Test
     void calculatePriceFishGold() {
-        ShoppingCart shoppingCart = new ShoppingCart();
+        AquaticAnimal aquaticAnimal = new AquaticAnimal();
 
         Product product = new Product(null, null, true, "gold", BigDecimal.valueOf(1), null, null, false, false);
 
-        shoppingCart.addProduct(product);
+        aquaticAnimal.addProduct(product);
 
-        assertEquals(shoppingCart.getTotalPrice(), 100);
+        assertEquals(aquaticAnimal.getTotalPrice(), 100);
 
     }
     @Test
@@ -128,7 +128,7 @@ class ShoppingCartTest {
 
         shoppingCart.addProduct(product);
 
-        gitassertEquals(product.getBasePrice(), null);
+        assertEquals(product.getBasePrice(), null);
 
     }
 

@@ -30,8 +30,6 @@ public class ShoppingCart {
       } else {
         return winePrice(product);
       }
-    } else if (product.getBasePrice() != null) {
-      return fishPrice(product);
     } else if (product.getName().startsWith("Magic: The Gathering")) {
       return cardPrice(product);
     }
@@ -68,13 +66,6 @@ public class ShoppingCart {
     return BigDecimal.valueOf(20.0 * product.getAge());
   }
 
-  public BigDecimal fishPrice(Product product) {
-    return switch (product.getColor()) {
-      case "blue" -> product.getBasePrice().add(BigDecimal.valueOf(0.1));
-      case "gold" -> product.getBasePrice().multiply(BigDecimal.valueOf(100.0));
-      default -> product.getBasePrice();
-    };
-  }
 
   public BigDecimal cardPrice(Product product) {
     if (product.getName().equals("Magic: The Gathering - Black Lotus")) {
