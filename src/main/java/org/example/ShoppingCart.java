@@ -20,52 +20,12 @@ public class ShoppingCart {
   }
 
   private BigDecimal calculatePrice(Product product) {
-    if (product.getName() == ("Spider")) {
-      return spiderPrice(product);
-    } else if (product.getNumberOfLegs() != null) {
-      return terrestrialAnimalPrice(product);
-    } else if (product.getAge() != null) {
-      if (product.isStinky()) {
-        return cheesePrice(product);
-      } else {
-        return winePrice(product);
-      }
-    } else if (product.getBasePrice() != null) {
+    if (product.getBasePrice() != null) {
       return fishPrice(product);
     } else if (product.getName().startsWith("Magic: The Gathering")) {
       return cardPrice(product);
     }
     return product.getSellPrice();
-  }
-
-  public BigDecimal spiderPrice(Product product) {
-    if (product.isStinky() && product.getColor() == "Red") {
-      return BigDecimal.valueOf((1.2 * product.getNumberOfLegs()) + 2.0)
-          .divide(BigDecimal.valueOf(2));
-    }
-    if (product.isStinky() && product.getColor() == "Gold") {
-      return BigDecimal.valueOf((1.2 * product.getNumberOfLegs()) + 3.0)
-          .divide(BigDecimal.valueOf(2));
-    }
-    if (product.getColor() == "Red") {
-      return BigDecimal.valueOf((1.2 * product.getNumberOfLegs()) + 2.0);
-    }
-    if (product.getColor() == "Gold") {
-      return BigDecimal.valueOf((1.2 * product.getNumberOfLegs()) + 3.0);
-    }
-    return BigDecimal.valueOf(1.2 * product.getNumberOfLegs());
-  }
-
-  public BigDecimal terrestrialAnimalPrice(Product product) {
-    return BigDecimal.valueOf(4.2 * product.getNumberOfLegs());
-  }
-
-  public BigDecimal cheesePrice(Product product) {
-    return BigDecimal.valueOf(10.0 * product.getAge());
-  }
-
-  public BigDecimal winePrice(Product product) {
-    return BigDecimal.valueOf(20.0 * product.getAge());
   }
 
   public BigDecimal fishPrice(Product product) {
